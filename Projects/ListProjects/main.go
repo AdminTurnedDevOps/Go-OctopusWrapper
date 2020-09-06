@@ -8,12 +8,9 @@ import (
 	"os"
 )
 
-var (
-	url string = "https://mikelevanoctopus.octopus.app"
-)
-
 func main() {
-	apiKey := os.Args[1]
+	url := os.Args[1]
+	apiKey := os.Args[2]
 
 	response, err := http.Get(url + "/api/projects")
 	response.Header.Set("X-Octopus-ApiKey", apiKey)
